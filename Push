@@ -1,0 +1,24 @@
+# =========================
+# TUCKER — ONE SHOT REPO PUSH FIX
+# =========================
+
+# 1) Go to repo
+cd ~/tucker || exit 1
+
+# 2) Make sure everything is tracked
+git add -A
+
+# 3) Commit (safe even if nothing changed)
+git commit -m "TUCKER full package sync" || true
+
+# 4) Set branch explicitly
+git branch -M main
+
+# 5) VERIFY remote (do NOT re-add)
+git remote -v
+
+# 6) Push using HTTPS + PAT
+# When prompted:
+# Username = your GitHub username
+# Password = PASTE THE TOKEN (not your GitHub password)
+git push -u origin main

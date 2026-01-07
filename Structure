@@ -1,0 +1,66 @@
+# =========================
+# TUCKER — ONE SHOT DROP
+# App + Web + AI + BLE + Repo Push
+# =========================
+
+# --- CONFIG (EDIT THESE 2 LINES ONLY) ---
+GITHUB_USER="YOUR_GITHUB_USERNAME"
+REPO_NAME="tucker"
+
+# --- CREATE PROJECT ---
+mkdir -p $REPO_NAME/{app,web,ai,ble,docs} && cd $REPO_NAME
+
+# --- GITIGNORE ---
+cat <<'EOF' > .gitignore
+node_modules/
+.env
+dist/
+build/
+EOF
+
+# --- AI ASSISTANT (TUCKER) ---
+cat <<'EOF' > ai/tucker.md
+# TUCKER AI
+Role: App + Web assistant
+Mode: Advisory only
+Rules:
+- Human-in-control
+- Credential-aware
+- Ethics-first
+- No autonomous actions
+EOF
+
+# --- AUTO BLE (PASSIVE / OS-SAFE) ---
+cat <<'EOF' > ble/auto_ble.js
+export const AutoBLE = {
+  mode: "passive",
+  allowed: ["device_name","rssi","service_uuids"],
+  blocked: ["pairing","sniffing","spoofing","decryption"]
+};
+EOF
+
+# --- WEB APP ---
+cat <<'EOF' > web/index.html
+<!DOCTYPE html>
+<html>
+<head><title>TUCKER</title></head>
+<body>
+<h1>TUCKER</h1>
+<p>AI + BLE Ready</p>
+</body>
+</html>
+EOF
+
+# --- README ---
+cat <<'EOF' > README.md
+# TUCKER
+One-shot App + Web platform with built-in AI assistant.
+EOF
+
+# --- GIT PUSH ---
+git init
+git add .
+git commit -m "TUCKER one-shot drop"
+git branch -M main
+git remote add origin https://github.com/$GITHUB_USER/$REPO_NAME.git
+git push -u origin main
